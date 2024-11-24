@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf6e3; /* светлый осенний бежевый */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1200px; /* Увеличиваем максимальную ширину контейнера */
+    transition: all 0.3s ease;
+}
+
+h1 {
+    color: #8c3b1b; /* тёплый коричневый для текста заголовка */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.cart-items {
+    display: flex; /* Используем flexbox для размещения карточек в строку */
+    flex-wrap: wrap; /* Разрешаем перенос карточек на следующую строку */
+    justify-content: space-between; /* Распределяем карточки по горизонтали */
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column; /* Вертикальное размещение элементов внутри карточки */
+    align-items: center; /* Центрирование элементов по горизонтали */
+    justify-content: center; /* Центрирование элементов по вертикали */
+    margin: 15px; /* Отступ между карточками */
+    padding: 20px;
+    border: 1px solid #d2a679; /* светло-оранжевая граница */
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Легкая тень для карточки */
+    width: calc(30% - 30px); /* Ширина карточки с учетом отступов */
+}
+
+.item-image {
+    width: 100%; /* Ширина изображения заполняет карточку */
+    max-width: 200px; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота */
+    border-radius: 4px; /* Закругление углов изображения */
+    margin-bottom: 10px; /* Отступ снизу для изображения */
+}
+
+.item-title {
+    font-size: 1.5em; /* Размер шрифта для названия товара */
+    color: #333; /* Цвет текста названия товара */
+    margin: 10px 0; /* Отступ сверху и снизу */
+    text-align: center; /* Центрирование текста */
+}
+
+.item-price {
+    font-weight: 600; /* Жирный шрифт для цены */
+    color: #333; /* Цвет текста цены */
+    margin-bottom: 15px; /* Отступ снизу для цены */
+}
+
+.button-group {
+    display: flex; /* Используем flexbox для кнопок */
+    justify-content: space-between; /* Разделяем кнопки по горизонтали */
+    width: 100%; /* Занимаем всю ширину карточки */
+}
+
+.btn-remove, .btn-buy {
+    background-color: #d8821c; /* Цвет кнопки удаления */
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Отступ для кнопок */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1; /* Кнопки занимают равное пространство */
+    margin: 0 5px; /* Отступ между кнопками */
+}
+
+.btn-remove:hover {
+    background-color: #a85c19; /* Цвет кнопки при наведении */
+}
+
+.btn-buy {
+    background-color: #4CAF50; /* Зелёный цвет кнопки покупки */
+}
+
+.btn-buy:hover {
+    background-color: #45a049; /* Более тёмный зелёный при наведении */
+}
+
+.checkout {
+    text-align: center; /* Центрируем кнопку покупки */
+    margin-top: 20px; /* Отступ сверху для кнопки покупки */
+}
+
+.btn-checkout {
+    background-color: #4CAF50; /* Зелёный цвет кнопки покупки всех товаров */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #45a049; /* Более тёмный зелёный при наведении */
+}
+
+

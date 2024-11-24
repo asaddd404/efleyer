@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf6e3; /* светлый осенний бежевый */
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1;
+    transition: all 0.3s ease;
+    animation: rotateShadow 2s ease-in-out infinite; /* Добавляем анимацию вращающейся тени */
+}
+h1 {
+    color: #8c3b1b; /* тёплый коричневый для текста заголовка */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #8c3b1b; /* тёплый коричневый для текста */
+    font-size: 1em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #fef6e3; /* светлый бежевый */
+    border: 2px solid #d2a679; /* светло-оранжевый для границы */
+    color: #333;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus {
+    border-color: #d8821c; /* яркий осенний оранжевый */
+    box-shadow: 0 0 10px rgba(216, 130, 28, 0.5);
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #d8821c;
+    border: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Добавляем отступ сверху для кнопки */
+}
+
+button[type="submit"]:hover {
+    background-color: #a85c19; /* темный оранжевый */
+    box-shadow: 0 8px 15px rgba(168, 92, 25, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(2px);
+}
+
+.error-message {
+    margin-top: 5px;
+    color: red;
+    font-size: 0.9em;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(216, 130, 28, 0.5); /* полупрозрачный осенний оранжевый */
+    animation: moveBackground 10s ease-in-out infinite;
+}
+
+.circle:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 10%;
+    animation-duration: 7s;
+}
+
+.circle:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 50%;
+    animation-duration: 7s;
+}
+
+.circle:nth-child(3) {
+    width: 180px;
+    height: 180px;
+    top: 70%;
+    left: 20%;
+    animation-duration: 7s;
+}
+
+.circle:nth-child(4) {
+    width: 130px;
+    height: 130px;
+    top: 90%;
+    left: 90%;
+    animation-duration: 7s;
+}
+
+.circle:nth-child(5) {
+    width: 160px;
+    height: 160px;
+    top: 50%;
+    left: 70%;
+    animation-duration: 7s;
+}
+
+.circle:nth-child(6) {
+    width: 130px;
+    height: 130px;
+    top: 10%;
+    left: 85%;
+    animation-duration: 7s;
+}
+@keyframes rotateShadow {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 165, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 165, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 165, 0, 0.5);
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(80px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.navigation {
+    position: absolute;
+    top: 20px; /* Отступ сверху для навигации */
+    width: 100%;
+    text-align: center; /* Центрируем текст */
+    z-index: 10;
+}
+
+.navigation ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+.navigation li {
+    display: inline-block; /* Выстраиваем элементы в одну линию */
+    margin: 0 15px; /* Отступы между элементами */
+}
+
+.navigation a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: #d8821c; /* Цвет текста ссылок */
+    font-weight: 500; /* Вес шрифта */
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+    font-size: 1.1em; /* Размер шрифта */
+}
+
+.navigation a:hover {
+    color: #a85c19; /* Темный оранжевый при наведении */
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+.registered a {
+    color: #d8821c; /* Новый красивый цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: 600; /* Увеличиваем вес шрифта */
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+}
+
+.registered a:hover {
+    color: #a85c19; /* Темный оттенок при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении для эффекта */
+}
+
+.registered {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.registered p {
+    font-size: 0.9em;
+    color: #333; /* Цвет текста параграфа */
+}
+
+.registered a {
+    color: #d8821c; /* Новый цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: 600; /* Увеличиваем вес шрифта */
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+}
+
+.registered a:hover {
+    color: #a85c19; /* Цвет при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении */
+}

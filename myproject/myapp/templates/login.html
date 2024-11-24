@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+    <!-- Движущиеся круги -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="navigation">
+        <ul>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+        </ul>
+    </div>
+    <!-- Контейнер для формы -->
+    <div class="container">
+        <h1>Авторизация</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Поле для ввода имени пользователя -->
+            <div class="form-group">
+                <label for="id_username">Имя пользователя:</label>
+                <input type="text" name="username" id="id_username" value="{{ form.username.value|default_if_none:'' }}">
+            </div>
+
+            <!-- Поле для ввода пароля -->
+            <div class="form-group">
+                <label for="id_password">Пароль:</label>
+                <input type="password" name="password" id="id_password" value="{{ form.password.value|default_if_none:'' }}">
+            </div>
+
+            <!-- Сообщение об ошибке, если оно есть -->
+            {% if form.non_field_errors %}
+                <div class="error-message">{{ form.non_field_errors }}</div>
+            {% endif %}
+
+            <button type="submit">Войти</button>
+            <div class="registered">
+                <p>Вы не зарегистрированы?<a href="{% url 'register' %}">Зарегистрируйтесь</a></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
